@@ -1,0 +1,4 @@
+﻿<resources>
+    <string name="app_name">LockPact</string>
+    <string name="accessibility_service_description">LockPact monitors opened apps so active pact locks can be enforced.</string>
+</resources>
