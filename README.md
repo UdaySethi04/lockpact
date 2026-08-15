@@ -1,3 +1,67 @@
+# LockPact
+
+LockPact is an Android accountability app that helps friends stay focused by letting them lock each other's chosen distracting apps for a fixed time.
+
+Users create pacts, expose only the apps they are comfortable sharing, lock pact members' exposed apps, and track activity through alerts, active locks, clean hours, streaks, and leaderboard-style progress.
+
+## Features
+
+- User signup and login with Supabase Authentication
+- Create and join pacts using invite codes
+- Scan installed Android apps
+- Choose which apps are exposed to pact members
+- Lock a friend's exposed app for a selected duration
+- View active locks on the Home and Locks screens
+- View pact members, exposed apps, leaderboard data, and recent activity
+- Alerts feed for lock and pact activity
+- Android Accessibility Service prototype for detecting opened apps
+- Blocking screen that appears when a locked app is opened
+- Dark, minimal Jetpack Compose UI
+
+## Tech Stack
+
+- Kotlin
+- Android Studio
+- Jetpack Compose
+- Material 3
+- Supabase Auth
+- Supabase PostgreSQL
+- Supabase Edge Functions
+- Supabase Realtime
+- Firebase Cloud Messaging
+- DataStore
+- WorkManager
+- Room
+- Kotlin Serialization
+
+## Project Structure
+
+```text
+app/src/main/java/com/lockpact/
+  auth/          Login, signup, and auth state
+  home/          Main dashboard
+  pacts/         Pact list, pact details, members, locks, leaderboard
+  apps/          Installed app scanner and exposed apps screen
+  locks/         Active locks screen
+  alerts/        Activity and alert feed
+  blocking/      Accessibility service and blocking screen
+  core/
+    session/     Current user/session helpers
+    supabase/    Supabase client setup
+  ui/
+    navigation/  App routes and bottom navigation
+    theme/       Colors, typography, and shapes
+```
+
+## Backend Overview
+
+LockPact uses Supabase for the backend.
+
+Main database tables:
+
+- `users`
+- `pacts`
+- `pact_members`
 - `exposed_apps`
 - `app_locks`
 - `activity_events`
